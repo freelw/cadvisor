@@ -76,5 +76,5 @@ HEALTHCHECK --interval=30s --timeout=3s \
 ENTRYPOINT [ \
   "/usr/bin/cadvisor", \
   "-logtostderr", \
-  "-enable_metrics=cpuLoad" \
+  "-whitelisted_container_labels=project_id" \
 ]
