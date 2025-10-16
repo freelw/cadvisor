@@ -1,5 +1,8 @@
 FROM registry.hub.docker.com/library/golang:1.24-alpine3.21 AS build
 
+ENV HTTP_PROXY="http://192.168.1.62:7890"
+ENV HTTPS_PROXY="http://192.168.1.62:7890"
+
 # Install build depdencies for all supported arches
 RUN apk --no-cache add bash build-base cmake device-mapper findutils git \
                        libc6-compat linux-headers ndctl-dev pkgconfig python3 wget zfs && \
